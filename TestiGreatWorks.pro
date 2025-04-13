@@ -251,9 +251,22 @@ FORMS += \
 
 # Default rules for deployment.
 
-    INCLUDEPATH += D:\BaiduNetdiskDownload\VTK-9.3.0-Accelate-Debug\include\vtk-9.3
+
     INCLUDEPATH += F:\VR_Code\OpenXR-SDK-Debug\include\openxr
     INCLUDEPATH += F:\CppLib\eigen-3.4.0\eigen-3.4.0
+
+    LIBS += opengl32.lib
+
+# VTK_LI
+#
+    VTK_PATH = $$PWD\VTK
+
+    VTK_VERSION = vtk-9.3
+    VTK_LIB_PATH = $$VTK_PATH\lib
+    VTK_INCLUDE_PATH = $$VTK_PATH\include\vtk-9.3
+
+    INCLUDEPATH += $$VTK_INCLUDE_PATH
+    LIBS += $$VTK_LIB_PATH\*.lib
 
 #    LIBS += D:\BaiduNetdiskDownload\VTK-9.3.0-Debug\lib\vtkcgns-9.3d.lib
 #    LIBS += D:\BaiduNetdiskDownload\VTK-9.3.0-Debug\lib\vtkChartsCore-9.3d.lib
@@ -600,9 +613,6 @@ FORMS += \
 #LIBS += D:\BaiduNetdiskDownload\VTK-9.3.0-Accelate-Debug\lib\vtkWrappingTools-9.3d.lib
 #LIBS += D:\BaiduNetdiskDownload\VTK-9.3.0-Accelate-Debug\lib\vtkzlib-9.3d.lib
 #LIBS += D:\BaiduNetdiskDownload\VTK-9.3.0-Accelate-Debug\lib\vtkRenderingParallel-9.3d.lib
-    LIBS += opengl32.lib
-VTK_LIBPATH = D:\BaiduNetdiskDownload\VTK-9.3.0-Accelate-Debug\lib
-LIBS += $$VTK_LIBPATH\*.lib
 
 #LIBS += D:\BaiduNetdiskDownload\VTK-9.3.0-Accelators-Release\lib\vtkAcceleratorsVTKmCore-9.3.lib
 #LIBS += D:\BaiduNetdiskDownload\VTK-9.3.0-Accelators-Release\lib\vtkAcceleratorsVTKmDataModel-9.3.lib
