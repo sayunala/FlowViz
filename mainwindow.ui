@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1152</width>
+    <height>762</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="igwMultiViewWidget" name="widget" native="true"/>
+    </item>
+    <item row="0" column="4">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="RealTime2D">
+         <property name="text">
+          <string>RealTime2D</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="MeshDataUpdate">
+         <property name="text">
+          <string>MeshDataUpdate</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="PosX">
+         <property name="text">
+          <string>+x</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="NegX">
+         <property name="text">
+          <string>-x</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="PosY">
+         <property name="text">
+          <string>+Y</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="NegY">
+         <property name="text">
+          <string>-Y</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="PosZ">
+         <property name="text">
+          <string>+Z</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="NegZ">
+         <property name="text">
+          <string>-Z</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="igwColorChooserButton" name="toolButton">
+         <property name="text">
+          <string>背景</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>testDataSet</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QVTKOpenGLNativeWidget" name="openGLWidget"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1152</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>显示方式</string>
+    </property>
+    <addaction name="actioncloud"/>
+    <addaction name="actionisosurface"/>
+    <addaction name="actionflowingstream"/>
+    <addaction name="actionstreamlines"/>
+    <addaction name="actionTexture"/>
+    <addaction name="actionmesh"/>
+    <addaction name="actionVolume"/>
+    <addaction name="actionVotex"/>
+    <addaction name="actionclip"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>数据</string>
+    </property>
+    <addaction name="actionOpenFile"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>窗口</string>
+    </property>
+    <addaction name="actionSpreadSheet"/>
+    <addaction name="actionColorMap"/>
+    <addaction name="actionGaussianSplatting"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="ColorMapDockWidget">
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>颜色编辑</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents"/>
+  </widget>
+  <widget class="QDockWidget" name="spreadSheetDockWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>600</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3"/>
+  </widget>
+  <widget class="QDockWidget" name="DataTreeDock">
+   <property name="windowTitle">
+    <string>模型树</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="igwDataTreeWidget" name="DataTree"/>
+  </widget>
+  <widget class="QDockWidget" name="InformationDock">
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="informationWidgetFrame">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="igwInformationWidget" name="InformationWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>83</width>
+          <height>514</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actioncloud">
+   <property name="text">
+    <string>cloud</string>
+   </property>
+  </action>
+  <action name="actionisosurface">
+   <property name="text">
+    <string>isosurface</string>
+   </property>
+  </action>
+  <action name="actionflowingstream">
+   <property name="text">
+    <string>flowingstream</string>
+   </property>
+  </action>
+  <action name="actionstreamlines">
+   <property name="text">
+    <string>streamlines</string>
+   </property>
+  </action>
+  <action name="actionTexture">
+   <property name="text">
+    <string>Texture</string>
+   </property>
+  </action>
+  <action name="actionmesh">
+   <property name="text">
+    <string>mesh</string>
+   </property>
+  </action>
+  <action name="actionBox">
+   <property name="text">
+    <string>方盒</string>
+   </property>
+  </action>
+  <action name="actionPlane">
+   <property name="text">
+    <string>Plane</string>
+   </property>
+  </action>
+  <action name="actionSpreadSheet">
+   <property name="text">
+    <string>数据表格</string>
+   </property>
+  </action>
+  <action name="actionColorMap">
+   <property name="text">
+    <string>颜色编辑</string>
+   </property>
+  </action>
+  <action name="actionOpenFile">
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+   <property name="toolTip">
+    <string>打开文件</string>
+   </property>
+  </action>
+  <action name="actionGaussianSplatting">
+   <property name="text">
+    <string>GaussianSplatting</string>
+   </property>
+  </action>
+  <action name="actionVolume">
+   <property name="text">
+    <string>Volume</string>
+   </property>
+  </action>
+  <action name="actionVotex">
+   <property name="text">
+    <string>Vortex</string>
+   </property>
+  </action>
+  <action name="actionclip">
+   <property name="text">
+    <string>clip</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKOpenGLNativeWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>QVTKOpenGLNativeWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>igwColorChooserButton</class>
+   <extends>QToolButton</extends>
+   <header>Widgets/igwColorChooserButton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>igwInformationWidget</class>
+   <extends>QWidget</extends>
+   <header>Components/igwinformationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>igwDataTreeWidget</class>
+   <extends>QWidget</extends>
+   <header>Components/igwdatatreewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>igwMultiViewWidget</class>
+   <extends>QWidget</extends>
+   <header>Components/igwMultiViewWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

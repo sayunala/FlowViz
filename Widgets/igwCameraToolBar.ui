@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>igwCameraToolBar</class>
+ <widget class="QToolBar" name="igwCameraToolBar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>521</width>
+    <height>45</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="whatsThis">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;toolbar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
+  <action name="actionPositiveX">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwXPlus.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwXPlus.png</iconset>
+   </property>
+   <property name="text">
+    <string>PositiveX</string>
+   </property>
+   <property name="toolTip">
+    <string>设置视图方向为+X</string>
+   </property>
+  </action>
+  <action name="actionPositiveY">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwYPlus.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwYPlus.png</iconset>
+   </property>
+   <property name="text">
+    <string>PositiveY</string>
+   </property>
+   <property name="toolTip">
+    <string>设置视图方向为+Y</string>
+   </property>
+  </action>
+  <action name="actionNegativeY">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwYMinux.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwYMinux.png</iconset>
+   </property>
+   <property name="text">
+    <string>NegativeY</string>
+   </property>
+   <property name="toolTip">
+    <string>设置视图方向为-Y</string>
+   </property>
+  </action>
+  <action name="actionNegativeX">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwXMinux.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwXMinux.png</iconset>
+   </property>
+   <property name="text">
+    <string>NegativeX</string>
+   </property>
+   <property name="toolTip">
+    <string>设置视图方向为-X</string>
+   </property>
+  </action>
+  <action name="actionPositiveZ">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwZPlus.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwZPlus.png</iconset>
+   </property>
+   <property name="text">
+    <string>PositiveZ</string>
+   </property>
+   <property name="toolTip">
+    <string>设置视图方向为+Z</string>
+   </property>
+  </action>
+  <action name="actionNegativeZ">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwZMinux.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwZMinux.png</iconset>
+   </property>
+   <property name="text">
+    <string>NegativeZ</string>
+   </property>
+   <property name="toolTip">
+    <string>设置视图方向为-Z</string>
+   </property>
+  </action>
+  <action name="actionCameraZoomin">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwxCameraZoomIn.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwxCameraZoomIn.png</iconset>
+   </property>
+   <property name="text">
+    <string>CameraZoomin</string>
+   </property>
+   <property name="toolTip">
+    <string>放大</string>
+   </property>
+  </action>
+  <action name="actionCameraZoomOut">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwCameraZoomOut.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwCameraZoomOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>CameraZoomOut</string>
+   </property>
+   <property name="toolTip">
+    <string>缩小</string>
+   </property>
+  </action>
+  <action name="actionZoomToBox">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwZoomToBox.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwZoomToBox.png</iconset>
+   </property>
+   <property name="text">
+    <string>ZoomToBox</string>
+   </property>
+   <property name="toolTip">
+    <string>框选放大</string>
+   </property>
+  </action>
+  <action name="actionResetCamera">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwResetCamera.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwResetCamera.png</iconset>
+   </property>
+   <property name="text">
+    <string>ResetCamera</string>
+   </property>
+   <property name="toolTip">
+    <string>重置相机</string>
+   </property>
+  </action>
+  <action name="actionSaveScreenShot">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwSavePicture.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwSavePicture.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveScreenShot</string>
+   </property>
+   <property name="toolTip">
+    <string>保存场景为图片或者使用Ctrl保存到剪贴板</string>
+   </property>
+  </action>
+  <action name="actionScreenShot">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwScreenShot.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwScreenShot.png</iconset>
+   </property>
+   <property name="text">
+    <string>ScreenShot</string>
+   </property>
+   <property name="toolTip">
+    <string>截取当前视图</string>
+   </property>
+  </action>
+  <action name="actionRotateCameraClock">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwRotateCameraClock.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwRotateCameraClock.png</iconset>
+   </property>
+   <property name="text">
+    <string>RotateCameraClock</string>
+   </property>
+   <property name="toolTip">
+    <string>顺时针旋转摄像头</string>
+   </property>
+  </action>
+  <action name="actionRotateCamreaCounterClock">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwRotateCameraCounterClock.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwRotateCameraCounterClock.png</iconset>
+   </property>
+   <property name="text">
+    <string>RotateCamreaCounterClock</string>
+   </property>
+   <property name="toolTip">
+    <string>逆时针旋转摄像头</string>
+   </property>
+  </action>
+  <action name="actionShowAxes">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwAxes.png</normaloff>:/igwWidgets/Icons/Widgets/Resources/Icons/igwAxes.png</iconset>
+   </property>
+   <property name="text">
+    <string>ShowAxes</string>
+   </property>
+   <property name="toolTip">
+    <string>显示坐标轴</string>
+   </property>
+  </action>
+  <addaction name="actionPositiveX"/>
+  <addaction name="actionPositiveY"/>
+  <addaction name="actionPositiveZ"/>
+  <addaction name="actionNegativeX"/>
+  <addaction name="actionNegativeY"/>
+  <addaction name="actionNegativeZ"/>
+  <addaction name="actionCameraZoomin"/>
+  <addaction name="actionCameraZoomOut"/>
+  <addaction name="actionZoomToBox"/>
+  <addaction name="actionResetCamera"/>
+  <addaction name="actionSaveScreenShot"/>
+  <addaction name="actionScreenShot"/>
+  <addaction name="actionRotateCameraClock"/>
+  <addaction name="actionRotateCamreaCounterClock"/>
+  <addaction name="separator"/>
+  <addaction name="actionShowAxes"/>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/Color">
+        <file>ColorMap/ColorManager/pqPresetGroups.json</file>
+    </qresource>
+    <qresource prefix="/igwWidgets/Icons">
+        <file>Widgets/Resources/Icons/igwXPlus.png</file>
+        <file>Widgets/Resources/Icons/igwYMinux.png</file>
+        <file>Widgets/Resources/Icons/igwYPlus.png</file>
+        <file>Widgets/Resources/Icons/igwZMinux.png</file>
+        <file>Widgets/Resources/Icons/igwZPlus.png</file>
+        <file>Widgets/Resources/Icons/igwXMinux.png</file>
+        <file>Widgets/Resources/Icons/igwCameraZoomOut.png</file>
+        <file>Widgets/Resources/Icons/igwxCameraZoomIn.png</file>
+        <file>Widgets/Resources/Icons/igwZoomToBox.png</file>
+        <file>Widgets/Resources/Icons/igwResetCamera.png</file>
+        <file>Widgets/Resources/Icons/igwSavePicture.png</file>
+        <file>Widgets/Resources/Icons/igwScreenShot.png</file>
+        <file>Widgets/Resources/Icons/igwRotateCameraClock.png</file>
+        <file>Widgets/Resources/Icons/igwRotateCameraCounterClock.png</file>
+        <file>Widgets/Resources/Icons/igwAxes.png</file>
+        <file>Widgets/Resources/Icons/igwSaveCSV.png</file>
+        <file>Widgets/Resources/Icons/igwSplitHorizontal.svg</file>
+        <file>Widgets/Resources/Icons/igwSplitVertical.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrBack.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrFirst.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrForward.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrLast.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrLoop.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrPause.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrPlay.svg</file>
+        <file>Widgets/Resources/Icons/igwVcrReverse.svg</file>
+    </qresource>
+</RCC>
