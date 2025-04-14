@@ -251,9 +251,11 @@ FORMS += \
 
 # Default rules for deployment.
 
+    THIRD_PATH = $$PWD\ThirdParty
+    EIGEN_PATH = $$THIRD_PATH\eigen-3.4.0
 
     INCLUDEPATH += F:\VR_Code\OpenXR-SDK-Debug\include\openxr
-    INCLUDEPATH += F:\CppLib\eigen-3.4.0\eigen-3.4.0
+    INCLUDEPATH += $$EIGEN_PATH
 
     LIBS += opengl32.lib
 
