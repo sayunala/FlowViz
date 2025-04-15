@@ -52,7 +52,6 @@ SOURCES += \
     Externsions/Sources/vtkLidarGridActor.cxx \
     Externsions/Sources/vtkPVGeometryFilter.cxx \
     Externsions/Sources/vtkPVTrivialProducer.cxx \
-    Externsions/XrInterface/igwXRInterfaceHelper.cpp \
     IO/igwCSVWriter.cpp \
     IO/igwIOCore.cpp \
     IO/igwReadCGNSFile.cpp \
@@ -157,8 +156,6 @@ HEADERS += \
     Externsions/Sources/vtkLidarGridActor.h \
     Externsions/Sources/vtkPVGeometryFilter.h \
     Externsions/Sources/vtkPVTrivialProducer.h \
-    Externsions/XrInterface/igwXRInterfaceHelper.h \
-    Externsions/XrInterface/igwXRInterfacePanel.h \
     IO/igwCSVWriter.h \
     IO/igwIOCore.h \
     IO/igwReadCGNSFile.h \
