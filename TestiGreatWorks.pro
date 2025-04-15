@@ -52,8 +52,6 @@ SOURCES += \
     Externsions/Sources/vtkLidarGridActor.cxx \
     Externsions/Sources/vtkPVGeometryFilter.cxx \
     Externsions/Sources/vtkPVTrivialProducer.cxx \
-    Externsions/XrInterface/igwXRInterfaceDockWidget.cpp \
-    Externsions/XrInterface/igwXRInterfaceHelper.cpp \
     IO/igwCSVWriter.cpp \
     IO/igwIOCore.cpp \
     IO/igwReadCGNSFile.cpp \
@@ -158,8 +156,6 @@ HEADERS += \
     Externsions/Sources/vtkLidarGridActor.h \
     Externsions/Sources/vtkPVGeometryFilter.h \
     Externsions/Sources/vtkPVTrivialProducer.h \
-    Externsions/XrInterface/igwXRInterfaceDockWidget.h \
-    Externsions/XrInterface/igwXRInterfaceHelper.h \
     Externsions/XrInterface/igwXRInterfacePanel.h \
     IO/igwCSVWriter.h \
     IO/igwIOCore.h \
@@ -235,7 +231,6 @@ FORMS += \
     Components/igwVCRToolBar.ui \
     Components/igwViewFrame.ui \
     Components/igwVtkWidget.ui \
-    Externsions/XrInterface/igwXRInterfaceDockWidget.ui \
     RepresentationWidget/RepresentationDialog.ui \
     RepresentationWidget/igwCloudMapRepresentationDialog.ui \
     RepresentationWidget/igwCloudMapRepresentationWidget.ui \
