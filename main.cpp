@@ -36,7 +36,6 @@ void testAnimationActors();
 #include "Core/igwApplicationCore.h"
 int main(int argc, char *argv[])
 {
-
     vtkObject::GlobalWarningDisplayOff();
     QApplication a(argc, argv);
     igwApplicationCore appcore(argc, argv);
@@ -72,6 +71,71 @@ int main(int argc, char *argv[])
 #include "vtkWarpScalar.h"
 
 
+#include <vtkSTLReader.h>
+#include "vtkActor.h"
+//#include "vtkOpenXRManager.h"
+//#include "vtkOpenXRCamera.h"
+//#include "vtkOpenXRManagerRemoteConnection.h"
+//#include "vtkOpenXRRemotingRenderWindow.h"
+//#include "vtkOpenXRRenderWindowInteractor.h"
+//#include "vtkOpenXRRenderer.h"
+#include "vtkPolyDataMapper.h"
+#include "vtkSphereSource.h"
+#include "vtkTestUtilities.h"
+#include "vtkSmartPointer.h"
+#include "vtkStructuredGrid.h"
+#include "vtkStructuredGridReader.h"
+#include "vtkNew.h"
+#include "vtksys/SystemTools.hxx"
+#include "Representation/vtkStreamLinesMapper.h"
+#include "vtkPolyDataReader.h"
+#include "ColorMap/igwColorMapManager.h"
+//int TestOpenXR(const char* IP)
+//{
+//    const char* playerIP = IP;
+
+//    vtkOpenXRRenderer* renderer = vtkOpenXRRenderer::New();
+
+//    vtkOpenXRRemotingRenderWindow* renderWindow = vtkOpenXRRemotingRenderWindow::New();
+//    vtkOpenXRRenderWindowInteractor* iren = vtkOpenXRRenderWindowInteractor::New();
+//    vtkNew<vtkOpenXRCamera> cam;
+//    renderWindow->AddRenderer(renderer);
+//    iren->SetRenderWindow(renderWindow);
+//    renderer->SetActiveCamera(cam);
+//    renderWindow->SetRemotingIPAddress(playerIP);
+
+//    vtkNew<vtkSTLReader> model_read;
+//    model_read->SetFileName("M6Wing3.stl");
+//    vtkNew<vtkPolyDataMapper> model_mapper;
+//    model_mapper->SetInputConnection(model_read->GetOutputPort());
+//    vtkNew<vtkActor> model_Actor;
+//    model_Actor->SetMapper(model_mapper);
+//    renderer->AddActor(model_Actor);
+
+////    vtkNew<vtkStructuredGridReader> torRead;
+////    torRead->SetFileName("tor_bin.vtk");
+////    torRead->Update();
+////    vtkDataSet* data = torRead->GetOutput();
+
+////    vtkNew<vtkPolyDataReader> nacaRead;
+////    nacaRead->SetFileName("2D_Data/NACA0012.vtk");
+
+////    vtkNew<vtkStreamLinesMapper> streamLinesMapper;
+////    streamLinesMapper->SetInputConnection(nacaRead->GetOutputPort());
+////    streamLinesMapper->SetNumberOfParticles(100);
+////    streamLinesMapper->SetMaxTimeToLive(600);
+////    streamLinesMapper->SetAlpha(0.01);
+////    streamLinesMapper->SetLookupTable(igwColorMapManager::GetInstance()->GetColorFunction());
+
+////    vtkNew<vtkActor> streamLinesActor;
+////    streamLinesActor->SetMapper(streamLinesMapper);
+////    renderer->AddActor(streamLinesActor);
+////    renderer->ResetCamera();
+
+//    iren->Start();
+
+//    return EXIT_SUCCESS;
+//}
 
 #include "vtkVolume.h"
 #include "vtkUnstructuredGridVolumeMapper.h"

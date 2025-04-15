@@ -52,6 +52,7 @@ SOURCES += \
     Externsions/Sources/vtkLidarGridActor.cxx \
     Externsions/Sources/vtkPVGeometryFilter.cxx \
     Externsions/Sources/vtkPVTrivialProducer.cxx \
+    Externsions/XrInterface/igwXRInterfaceHelper.cpp \
     IO/igwCSVWriter.cpp \
     IO/igwIOCore.cpp \
     IO/igwReadCGNSFile.cpp \
@@ -156,6 +157,7 @@ HEADERS += \
     Externsions/Sources/vtkLidarGridActor.h \
     Externsions/Sources/vtkPVGeometryFilter.h \
     Externsions/Sources/vtkPVTrivialProducer.h \
+    Externsions/XrInterface/igwXRInterfaceHelper.h \
     Externsions/XrInterface/igwXRInterfacePanel.h \
     IO/igwCSVWriter.h \
     IO/igwIOCore.h \
@@ -264,17 +266,6 @@ FORMS += \
 
     INCLUDEPATH += $$VTK_INCLUDE_PATH
     LIBS += $$VTK_LIB_PATH\*.lib
-
-
-
-
-# ParaView Lib
-
-#PARAVIEW_DIR = "D:\BaiduNetdiskDownload\ParaViewInstall\install"
-
-## 添加头文件路径
-#INCLUDEPATH += D:\BaiduNetdiskDownload\ParaViewInstall\install\include\paraview-5.7\vtkqttesting
-#INCLUDEPATH += D:\BaiduNetdiskDownload\ParaViewInstall\install\include\paraview-5.7
 
 
 
