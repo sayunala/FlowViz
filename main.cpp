@@ -36,6 +36,7 @@ void testAnimationActors();
 #include "Core/igwApplicationCore.h"
 int main(int argc, char *argv[])
 {
+
     vtkObject::GlobalWarningDisplayOff();
     QApplication a(argc, argv);
     igwApplicationCore appcore(argc, argv);
