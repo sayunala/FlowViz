@@ -255,7 +255,7 @@ FORMS += \
     EIGEN_PATH = $$THIRD_PATH\eigen-3.4.0
     OPENXR_PATH = $$THIRD_PATH\OpenXR-SDK-Debug
     INCLUDEPATH += $$OPENXR_PATH\include\openxr
-    INCLUDEPATH += $$EIGEN_PATH
+    INCLUDEPATH += $$PWD\ThirdParty\eigen-3.4.0\eigen-3.4.0
 
     LIBS += opengl32.lib
 
