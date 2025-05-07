@@ -124,8 +124,8 @@ protected:
 
   inline double Rand(double vmin = 0., double vmax = 1.)
   {
-//    this->RandomNumberSequence->Next();
-//    return this->RandomNumberSequence->GetRangeValue(vmin, vmax);
+    this->RandomNumberSequence->Next();
+    return this->RandomNumberSequence->GetRangeValue(vmin, vmax);
 
        if (vmin > vmax) {
 //           throw std::invalid_argument("Minimum value cannot be greater than maximum value.");

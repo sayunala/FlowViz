@@ -46,6 +46,7 @@ bool vtkPVColorTransferControlPointsItem::MouseDoubleClickEvent(const vtkContext
   // ignore any double-click with the left mouse button.
   if (mouse.GetButton() == vtkContextMouseEvent::LEFT_BUTTON)
   {
+    this->InvokeEvent(vtkControlPointsItem::CurrentPointEditEvent);
     return true;
   }
   return this->Superclass::MouseDoubleClickEvent(mouse);

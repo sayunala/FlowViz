@@ -252,7 +252,7 @@ void MainWindow::UpdateMeshData()
 }
 void MainWindow::ReRender(){
 //    this->renderer->ResetCamera();
-
+    igwApplicationCore::GetInstance()->render();
     this->renderWindow->Render();
 
 }

@@ -85,7 +85,7 @@ igwRenderedSurfaceRepresentation::igwRenderedSurfaceRepresentation()
 
 
     this->PointColorArrayNameInternal = nullptr;
-//    this->SetOpacity(0.3);
+    this->SetOpacity(0.3);
 }
 
 igwRenderedSurfaceRepresentation::~igwRenderedSurfaceRepresentation()
