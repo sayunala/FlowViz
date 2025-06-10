@@ -18,13 +18,20 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QVTKOpenGLNativeWidget" name="openGLWidget"/>
+    </item>
     <item row="0" column="1">
-     <widget class="igwMultiViewWidget" name="widget" native="true"/>
+     <widget class="igwMultiViewWidget" name="widget" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="0" column="4">
      <widget class="QGroupBox" name="groupBox">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -107,6 +114,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="RealTime2D_2">
+         <property name="text">
+          <string>RealTime2D</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="pushButton">
          <property name="text">
           <string>testDataSet</string>
@@ -115,9 +129,6 @@
        </item>
       </layout>
      </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QVTKOpenGLNativeWidget" name="openGLWidget"/>
     </item>
    </layout>
   </widget>
@@ -164,6 +175,9 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QDockWidget" name="ColorMapDockWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="allowedAreas">
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>

@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "groupName": "Default",
     "presets": [
@@ -17,7 +17,9 @@
       "Rainbow Desaturated",
       "Yellow - Gray - Blue",
       "Rainbow Uniform",
-      "Turbo"
+      "Turbo",
+      "ACFD 11",
+      "Blue to Red"
     ]
   },
   {

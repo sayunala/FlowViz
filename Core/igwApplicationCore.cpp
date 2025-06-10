@@ -5,6 +5,7 @@
 #include "Components/igwAnimationManager.h"
 #include "Components/igwTimeKeeper.h"
 #include "Components/igwAnimationScene.h"
+#include "Components/igwActiveObjects.h"
 igwApplicationCore* igwApplicationCore::instance = nullptr;
 igwApplicationCore::igwApplicationCore(int& argc, char** argv,QObject* parent)
     :QObject(parent)
@@ -41,6 +42,7 @@ void igwApplicationCore::render()
     {
         view->render();
     }
+    igwActiveObjects::GetInstance().GetActiveView()->Render();
 }
 
 void igwApplicationCore::prepareQuit()

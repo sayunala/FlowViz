@@ -107,6 +107,7 @@ protected:
     vtkSmartPointer<vtkGlyph3D> Glyph3D;
     vtkSmartPointer<vtkMaskPoints> MaskPoints;
     vtkSmartPointer<vtkArrowSource> Arrow;
+    vtkSmartPointer<vtkArrowSource> InverArrow;
     vtkSmartPointer<vtkTransform> Transform;
     vtkSmartPointer<vtkTransformPolyDataFilter> TransformPolyDataFilter;
     vtkSmartPointer<vtkPolyDataMapper> Mapper;

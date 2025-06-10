@@ -4,6 +4,7 @@
 #include "igwVCRControl.h"
 #include "Core/igwApplicationCore.h"
 #include "Components/igwAnimationManager.h"
+
 igwVCRToolBar::igwVCRToolBar(QWidget *parent) :
     QToolBar(parent),
     ui(new Ui::igwVCRToolBar)

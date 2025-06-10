@@ -74,7 +74,7 @@ igwCloudMapRepresentation::igwCloudMapRepresentation()
 
     this->Actor->SetMapper(Mapper);
 
-//    this->SetPlaneVisibility(false);
+    this->SetPlaneVisibility(false);
 
     // 默认三维数据
     this->Type = THREE_D;

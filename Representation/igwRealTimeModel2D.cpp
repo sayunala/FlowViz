@@ -56,7 +56,7 @@ igwRealTimeModel2D::igwRealTimeModel2D(vtkRenderer *render, vtkRenderWindowInter
     m_Iren = iren;
     m_Model = model;
 
-    //计算法
+    //计算法线
     ComputerNormal();
 
     InitGlyph();

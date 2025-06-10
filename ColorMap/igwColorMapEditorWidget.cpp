@@ -16,6 +16,7 @@
 #include "igwColorMapManager.h"
 #include "igwPresetToPixmap.h"
 #include "igwColorMapCore.h"
+#include "igwPresetDialog.h"
 #include "vtk_jsoncpp.h"
 
 class igwColorMapDelegate : public QStyledItemDelegate
@@ -283,3 +284,10 @@ void igwColorMapEditorWidget::on_saveAsPreset_clicked()
     m_groupManager->addToGroup("User", QString::fromStdString(presetName));
     Q_EMIT SaveStateAsPresets();
 }
+
+void igwColorMapEditorWidget::on_moreColorBtn_clicked()
+{
+    igwPresetDialog* presetDialog = new igwPresetDialog(this);
+    presetDialog->exec();
+}
+

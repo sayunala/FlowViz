@@ -137,8 +137,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     //-------------------naca数据------------------------
 //    vtkSmartPointer<vtkDataSet>  data = ConstructDataset("2D_Data/result_alldata.etkf", "2D_Data/fluent_naca0012.etkfg");
-//    vtkSmartPointer<vtkDataSet> naca_wing = ConstrucNACA0012DataSet("2D_Data/NACA0012_Wing_Data.csv");
-
+    vtkSmartPointer<vtkDataSet> naca_wing = ConstrucNACA0012DataSet("2D_Data/NACA0012_Wing_Data.csv");
+//    naca_wing->Print(std::cout);
 
     // 设置当前的视图、数据源
 //    igwActiveObjects::GetInstance().SetActiveView(view);
@@ -149,27 +149,28 @@ MainWindow::MainWindow(QWidget *parent)
 
     // 设置输入数据
 
-//    realTimeModel2DRep->SetInputData(naca_wing);
+
 
 
 //    igwColorMapManager::GetInstance()->SetRange(array->GetRange(-1));
     igwColorMapManager::GetInstance()->ApplyPreset("Cool to Warm");
     igwColorMapManager::GetInstance()->GetColorFunction()->SetVectorModeToMagnitude();
-
+    realTimeModel2DRep->SetInputData(naca_wing);
     // 设置颜色映射表
-//    realTimeModel2DRep->SetLookupTable(igwColorMapManager::GetInstance()->GetColorFunction());
-    meshRep->SetLookupTable(igwColorMapManager::GetInstance()->GetColorFunction());
 
-//    realTimeModel2DRep->SetDataSet(naca_wing);
+//    meshRep->SetLookupTable(igwColorMapManager::GetInstance()->GetColorFunction());
+
+    realTimeModel2DRep->SetDataSet(naca_wing);
 
 
 
-//    realTimeModel2DRep->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, "cp");
-    meshRep->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_CELLS, "press");
+    realTimeModel2DRep->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, "cp");
+    realTimeModel2DRep->SetLookupTable(igwColorMapManager::GetInstance()->GetColorFunction());
+//    meshRep->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_CELLS, "press");
 //    view->AddRepresentation(rep2);
-//    realTimeModel2DRep->Update();
-//    view->AddRepresentation(realTimeModel2DRep);
-
+    realTimeModel2DRep->Update();
+    view->AddRepresentation(realTimeModel2DRep);
+    igwActiveObjects::GetInstance().GetActiveView()->AddRepresentation(realTimeModel2DRep);
 
 
     view->GetRenderer()->GetActiveCamera()->Zoom(3);

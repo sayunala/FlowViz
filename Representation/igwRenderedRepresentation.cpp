@@ -249,9 +249,10 @@ void igwRenderedRepresentation::SetInputData(vtkDataObject * dataObject)
     if(dataSet == nullptr) return;
     this->SetDataSet(dataSet);
     vtkPointData* pointData = dataSet->GetPointData();
-
-    this->SetInputArrayToProcess(0,0,0, vtkDataObject::FIELD_ASSOCIATION_POINTS, pointData->GetArrayName(0));
-
+    if(this->GetPointColorArrayName() == nullptr)
+        this->SetInputArrayToProcess(0,0,0, vtkDataObject::FIELD_ASSOCIATION_POINTS, pointData->GetArrayName(0));
+    else
+        this->SetInputArrayToProcess(0,0,0, vtkDataObject::FIELD_ASSOCIATION_POINTS, this->GetPointColorArrayName());
 }
 
 void igwRenderedRepresentation::SetInputData(int port, vtkDataObject *dataObject)

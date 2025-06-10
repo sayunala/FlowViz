@@ -253,8 +253,6 @@ FORMS += \
 
     LIBS += opengl32.lib
 
-# VTK_LI
-#
     VTK_PATH = $$PWD\VTK
 
     VTK_VERSION = vtk-9.3

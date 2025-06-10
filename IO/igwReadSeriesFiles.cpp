@@ -86,6 +86,7 @@ private:
 
     i++;
     igwApplicationCore::GetInstance()->render();
+
   }
 
   void End()

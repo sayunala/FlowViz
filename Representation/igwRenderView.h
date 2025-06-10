@@ -142,16 +142,16 @@ protected:
 
 
     //左下角坐标轴
-    vtkSmartPointer<vtkAxesActor> AxesActor;
-    vtkSmartPointer<vtkOrientationMarkerWidget> AxesWidget;
+    vtkSmartPointer<vtkAxesActor> AxesActor;                // 坐标轴演员
+    vtkSmartPointer<vtkOrientationMarkerWidget> AxesWidget; // 坐标轴可交互组件
 
-    InteractionModes InteractionMode;
-    vtkInteractorStyleRubberBandZoom* RubberBandZoom;
-    vtkInteractorStyleRubberBand2D* RubberBand2D;
-    vtkInteractorStyleRubberBand3D* RubberBand3D;
-    vtkInteractorStyleTrackballCamera* TrackballCamera;
-    vtkInteractorStyle3D* InteractorStyle3D;
-    vtkSmartPointer<vtkLidarGridActor> LidarGridActor;
+    InteractionModes InteractionMode;                       // 交互模式
+    vtkInteractorStyleRubberBandZoom* RubberBandZoom;       // 框选放大交互样式
+    vtkInteractorStyleRubberBand2D* RubberBand2D;           // 二维框选拾取相关，目前没用
+    vtkInteractorStyleRubberBand3D* RubberBand3D;           // 三维框选拾取相关，目前没用
+    vtkInteractorStyleTrackballCamera* TrackballCamera;     // 相机交互样式
+    vtkInteractorStyle3D* InteractorStyle3D;                // 和VR/AR交互相关，目前没用
+    vtkSmartPointer<vtkLidarGridActor> LidarGridActor;      // 可以忽略
 
 
 };

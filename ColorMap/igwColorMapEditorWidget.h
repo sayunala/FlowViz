@@ -51,9 +51,11 @@ private slots:
     void ResetCombox();
 
     /**
-     * @brief 保存预设按钮响应槽函数
-     */
+     * @brief 保存预设按钮响应槽函数  
+*/
     void on_saveAsPreset_clicked();
+
+    void on_moreColorBtn_clicked();
 
 private:
     Ui::igwColorMapEditorWidget *ui;

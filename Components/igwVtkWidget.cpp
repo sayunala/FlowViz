@@ -36,9 +36,9 @@ igwVtkWidget::igwVtkWidget(QWidget *parent) :
     renderer = vtkSmartPointer<vtkRenderer>::New();
 
 //    renderer->SetBackground(colors->GetColor3d("SteelBlue").GetData());
-//    renderer->SetGradientBackground(true);
-    renderer->SetBackground(1,1,1);
-//    renderer->SetBackground2(75.0/255.0,75.0/255.0,75.0/255.0);
+    renderer->SetGradientBackground(true);
+    renderer->SetBackground(0,0,0);
+    renderer->SetBackground2(75.0/255.0,75.0/255.0,75.0/255.0);
 
     renderWindow = vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
 

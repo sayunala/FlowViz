@@ -10,7 +10,7 @@
 #include "vtkDoubleArray.h"
 #include "vtkPointData.h"
 #include "vtkSmartPointer.h"
-
+#include "vtkDataArray.h"
 #include "igwRenderView.h"
 #include "igwCommand.h"
 
@@ -101,7 +101,7 @@ void igwRealTimeModel2DRepresentation::SetInputArrayToProcess(int idx, int port,
         this->ModelMapper->SetScalarVisibility(1);
         this->ModelMapper->SelectColorArray(name);
         this->ModelMapper->SetUseLookupTableScalarRange(1);
-
+        this->Glyph3D->SetRange(this->GetArrayRange(fieldAssociation, name));
     }
     else
     {
@@ -177,6 +177,10 @@ void igwRealTimeModel2DRepresentation::InitGlyph3D()
     this->Arrow = vtkSmartPointer<vtkArrowSource>::New();
     this->Arrow->SetTipResolution(1);
     this->Arrow->SetShaftResolution(1);
+    this->InverArrow = vtkSmartPointer<vtkArrowSource>::New();
+    this->InverArrow->SetInvert(true);
+    this->InverArrow->SetTipResolution(1);
+    this->InverArrow->SetShaftResolution(1);
     this->Transform = vtkSmartPointer<vtkTransform>::New();
 //    transform->Translate(0.5, 0, 0);
     this->TransformPolyDataFilter = vtkSmartPointer<vtkTransformPolyDataFilter>::New();
@@ -185,11 +189,22 @@ void igwRealTimeModel2DRepresentation::InitGlyph3D()
 
     this->Glyph3D->SetInputConnection(MaskPoints->GetOutputPort());
 
-    this->Glyph3D->SetSourceConnection(TransformPolyDataFilter->GetOutputPort());
+    this->Glyph3D->SetSourceConnection(0,TransformPolyDataFilter->GetOutputPort());
+    this->Glyph3D->SetSourceConnection(1,InverArrow->GetOutputPort());
+
     this->Glyph3D->SetVectorModeToUseVector();
     this->Glyph3D->SetScaleModeToScaleByScalar();
+    this->Glyph3D->SetIndexModeToScalar();
+//    this->Glyph3D->set
+//    this->Glyph3D->SetFollowedCameraPosition(p);
+//    this->Glyph3D->SetFollowedCameraViewUp(view);
+//    this->Glyph3D->SetClamping(true);
+
+
     this->Glyph3D->SetScaleFactor(0.01);
 //    this->Glyph3D->Update();
+    this->Glyph3D->GeneratePointIdsOn();
+    this->Glyph3D->Update();
 
 }
 
@@ -205,6 +220,12 @@ void igwRealTimeModel2DRepresentation::ComputerNormal()
     vtkPolyData* poly_data = vtkPolyData::SafeDownCast(DataSet);
     vtkPoints* points = poly_data->GetPoints();
     vtkIdType points_number = points->GetNumberOfPoints();
+    int middle_index = points_number/2;
+    vtkDoubleArray* CurrentArray = nullptr;
+    if(PointColorArrayNameInternal != nullptr)
+    {
+        CurrentArray = vtkDoubleArray::SafeDownCast(DataSet->GetPointData()->GetArray(PointColorArrayNameInternal));
+    }
     for(vtkIdType i = 0; i < DataSet->GetNumberOfPoints(); i++){
         double vec_1[3], vec_2[3];
         double point_1[3], point_2[3], point_3[3];
@@ -221,8 +242,10 @@ void igwRealTimeModel2DRepresentation::ComputerNormal()
             points->GetPoint(i - 1, point_3);
 
         }
-        vtkMath::Subtract(point_2, point_1, vec_1);
-        vtkMath::Subtract(point_1, point_3, vec_2);
+
+
+        vtkMath::Subtract(point_1, point_2, vec_1);
+        vtkMath::Subtract(point_3, point_1, vec_2);
 
         double normal_1[3], normal_2[3];
         vtkMath::Cross(XY_Normal, vec_1, normal_1);
@@ -231,7 +254,22 @@ void igwRealTimeModel2DRepresentation::ComputerNormal()
         double normal[3];
         vtkMath::Add(normal_1, normal_2, normal);
         vtkMath::Normalize(normal);
-        point_normal->InsertNextTuple3(normal[0], normal[1], normal[2]);
+
+        double cp;
+        if(CurrentArray != nullptr)
+        {
+            cp = CurrentArray->GetValue(i);
+        }
+        if(cp < 0)
+        {
+            point_normal->InsertNextTuple3(normal[0], normal[1], normal[2]);
+        }
+        else
+        {
+            point_normal->InsertNextTuple3(-normal[0], -normal[1], normal[2]);
+        }
+
+
     }
 
     DataSet->GetPointData()->SetVectors(point_normal);
@@ -267,7 +305,7 @@ bool igwRealTimeModel2DRepresentation::AddToView(vtkView *view)
     }
     rv->GetRenderer()->AddActor(this->Actor);
     rv->GetRenderer()->AddActor(this->ModelActor);
-//    this->Superclass::AddToView(view);
+    this->Superclass::AddToView(view);
     vtkRenderWindowInteractor* interactor = rv->GetInteractor();
     interactor->AddObserver(iGreatWorks::RealTimeModelUpdateEvent, this->RealTimeModel2DObserver);
 
